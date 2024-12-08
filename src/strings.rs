@@ -16,5 +16,25 @@ pub fn run() {
     // Chceck if empty
     println!("Is Empty: {}", hello_growable.is_empty());
 
+    // Contains
+    println!("Contains 'World' {}", hello_growable.contains("World"));
+
+    // Replace
+    println!("Replace: {}", hello_growable.replace("World", "There"));
+
+    // Loop through string by whitespace
+    for word in hello_growable.split_whitespace() {
+        println!("{}", word);
+    }
+
+    //Create string with capacity
+    let mut s = String::with_capacity(10);
+    s.push('a');
+    s.push('b');
+
+    //Assertion testing
+    assert_eq!(2, s.len());
+    assert_eq!(10, s.capacity());
+
     println!("Length: {}", hello_growable.len())
 }
